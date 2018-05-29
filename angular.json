@@ -120,6 +120,45 @@
           }
         }
       }
+    },
+    "log-monitor": {
+      "root": "projects/log-monitor",
+      "sourceRoot": "projects/log-monitor/src",
+      "projectType": "library",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/log-monitor/tsconfig.lib.json",
+            "project": "projects/log-monitor/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/log-monitor/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/log-monitor/src/test.ts",
+            "tsConfig": "projects/log-monitor/tsconfig.spec.json",
+            "karmaConfig": "projects/log-monitor/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/log-monitor/tsconfig.lib.json",
+              "projects/log-monitor/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-log-monitor"
