@@ -4,7 +4,6 @@
   #container
   class="container"
   [ngClass]="theme+'-theme'"
-  (scroll)="onScroll($event)"
 >
   <span
     class="msg-item {{'msg-'+(log.type.toLowerCase())}}"

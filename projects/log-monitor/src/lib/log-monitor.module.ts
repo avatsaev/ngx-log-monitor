@@ -3,9 +3,7 @@ import { LogMonitorComponent } from './log-monitor.component';
 import {CommonModule} from '@angular/common';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [LogMonitorComponent],
   exports: [LogMonitorComponent]
 })

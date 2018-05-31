@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {LogMessage} from 'ngx-log-monitor';
+import {LogMessage as NgxLogMessage} from 'ngx-log-monitor';
 import {timer} from 'rxjs';
 import {map, take, tap} from 'rxjs/operators';
 
@@ -8,9 +8,9 @@ import {map, take, tap} from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  title = 'app';
-  logs: LogMessage[] = [
+export class AppComponent {
+
+  logs: NgxLogMessage[] = [
     {message: 'A simple log message'},
     {message: 'A success message', type: 'SUCCESS'},
     {message: 'A warning message', type: 'WARN'},
@@ -22,10 +22,5 @@ export class AppComponent implements OnInit{
     take(this.logs.length),
     map(i => this.logs[i])
   );
-
-
-  ngOnInit() {
-  }
-
 
 }

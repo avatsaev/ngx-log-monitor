@@ -18,7 +18,7 @@ import {normalizeLogMessage} from './helpers/log-message.helper';
   styleUrls: ['./log-monitor.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LogMonitorComponent implements OnInit, OnChanges, AfterViewInit {
+export class LogMonitorComponent implements OnChanges, AfterViewInit {
 
   @Input() title;
   @Input() msgStream: LogMessage;
@@ -30,9 +30,6 @@ export class LogMonitorComponent implements OnInit, OnChanges, AfterViewInit {
   @ViewChild('container') container: ElementRef;
 
   constructor(private zone: NgZone) { }
-
-  ngOnInit() {
-  }
 
   ngOnChanges(changes: SimpleChanges) {
 
@@ -52,13 +49,6 @@ export class LogMonitorComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngAfterViewInit() {
     this.scrollToBottom();
-  }
-
-
-  onScroll(e: Event) {
-    // console.log(e);
-
-    // console.log(this.container.nativeElement.scrollTop, this.container.nativeElement.scrollHeight);
   }
 
   private scrollToBottom() {

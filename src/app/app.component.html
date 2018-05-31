@@ -8,6 +8,17 @@
     theme="dark"
   ></log-monitor>
 
+
+
+  <log-monitor
+    [msgStream]="logStream$ | async"
+    theme="dark"
+    title="NGRX action dispatch logs"
+    [animated]="true"
+    [icons]="true"
+    [history]="restoredLogs"
+  ></log-monitor>
+
   <span class="title">Light theme:</span>
 
   <log-monitor
