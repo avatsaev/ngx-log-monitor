@@ -11,13 +11,11 @@ import {map, take, tap} from 'rxjs/operators';
 export class AppComponent implements OnInit{
   title = 'app';
   logs: LogMessage[] = [
-    {message: 'log 1', time: '12:23:33'},
-    {message: 'log 2', time: '12:23:34'},
-    {message: 'log 3', time: '12:23:35'},
-    {message: 'log 4', time: '12:23:36'},
-    {message: 'log 5', time: '12:23:37'},
-    {message: 'log 6', time: '12:23:38'},
-    {message: 'log 7', time: '12:23:39'},
+    {message: 'A simple log message'},
+    {message: 'A success message', type: 'SUCCESS'},
+    {message: 'A warning message', type: 'WARN'},
+    {message: 'An error message', type: 'ERR'},
+    {message: 'An info message', type: 'INFO'},
   ];
 
   logStream$ = timer(0, 1000).pipe(

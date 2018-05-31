@@ -1,8 +1,8 @@
 
 
 export interface LogMessage {
-  type?: 'LOG' | 'INFO' | 'WARN' | 'ERR';
-  time: string;
+  type?: 'LOG' | 'INFO' | 'WARN' | 'ERR' | 'SUCCESS';
+  timestamp?: string;
   message: string;
 }
 

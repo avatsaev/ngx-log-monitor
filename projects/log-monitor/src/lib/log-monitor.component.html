@@ -1,8 +1,25 @@
-<div #container class="container">
 
-
-    <span *ngFor="let log of history">
-      [{{log.time}}]: {{log.message}}
+<div *ngIf="title" class="title-bar" [ngClass]="theme+'-theme'">&#9002; {{title}}</div>
+<div
+  #container
+  class="container"
+  [ngClass]="theme+'-theme'"
+  (scroll)="onScroll($event)"
+>
+  <span
+    class="msg-item {{'msg-'+(log.type.toLowerCase())}}"
+    *ngFor="let log of history"
+    [ngClass]="{'animated': animated}"
+  >
+    <span *ngIf="icons" [ngSwitch]="log.type">
+      <ng-container *ngSwitchCase="'ERR'">&#10008;</ng-container>
+      <ng-container *ngSwitchCase="'SUCCESS'">&#10004;</ng-container>
+      <ng-container *ngSwitchCase="'LOG'">&#10097;</ng-container>
+      <ng-container *ngSwitchCase="'WARN'">&#8252;</ng-container>
+      <ng-container *ngSwitchCase="'INFO'">&#8505;</ng-container>
     </span>
+
+    [{{log.timestamp}}]: {{log.message}}
+  </span>
 
 </div>

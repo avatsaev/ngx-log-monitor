@@ -1,8 +1,67 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <div class="container">
+  <span class="title">Dark theme:</span>
   <log-monitor
+    style="margin: 5px"
     [msgStream]="logStream$ | async"
+    theme="dark"
   ></log-monitor>
+
+  <span class="title">Light theme:</span>
+
+  <log-monitor
+    style="margin: 5px"
+    [msgStream]="logStream$ | async"
+    theme="light"
+  ></log-monitor>
+
+
+
+  <span class="title">With title dark:</span>
+
+  <log-monitor
+    style="margin: 5px"
+    [msgStream]="logStream$ | async"
+    title="Admin logs"
+  ></log-monitor>
+
+
+  <span class="title">With title light:</span>
+
+  <log-monitor
+    style="margin: 5px"
+    [msgStream]="logStream$ | async"
+    title="User logs"
+    theme="light"
+  ></log-monitor>
+
+  <span class="title">No icons:</span>
+
+  <log-monitor
+    style="margin: 5px"
+    [msgStream]="logStream$ | async"
+    [icons]="false"
+  ></log-monitor>
+
+
+  <span class="title">Hydrated log history:</span>
+
+  <log-monitor
+    style="margin: 5px"
+    [msgStream]="logStream$ | async"
+    [history]="logs"
+  ></log-monitor>
+
+
+  <span class="title">No animation:</span>
+
+  <log-monitor
+    style="margin: 5px"
+    [msgStream]="logStream$ | async"
+    [animated]="false"
+  ></log-monitor>
+
+
 
 </div>
