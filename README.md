@@ -1,4 +1,4 @@
-# NGX Log Monitor - Log Monitor Component for Angular 
+# NGX Log Monitor - Log Monitoring Component for Angular 
 
 
 DEMO: https://ngx-log-monitor.surge.sh
