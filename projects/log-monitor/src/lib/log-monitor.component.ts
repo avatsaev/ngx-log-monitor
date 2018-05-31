@@ -21,7 +21,7 @@ import {normalizeLogMessage} from './helpers/log-message.helper';
 export class LogMonitorComponent implements OnChanges, AfterViewInit {
 
   @Input() title;
-  @Input() msgStream: LogMessage;
+  @Input() logStream: LogMessage;
   @Input() history: LogMessage[] = [];
   @Input() theme: 'dark' | 'light' = 'dark';
   @Input() icons = true;
@@ -37,10 +37,10 @@ export class LogMonitorComponent implements OnChanges, AfterViewInit {
       this.history = changes.history.currentValue.map(normalizeLogMessage);
     }
 
-    if (changes.msgStream && changes.msgStream.currentValue) {
+    if (changes.logStream && changes.logStream.currentValue) {
 
       this.zone.run(() => {
-        const normalizedMsg = normalizeLogMessage(changes.msgStream.currentValue);
+        const normalizedMsg = normalizeLogMessage(changes.logStream.currentValue);
         this.history.push(normalizedMsg);
         setTimeout(() => this.scrollToBottom());
       });

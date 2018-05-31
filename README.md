@@ -82,7 +82,7 @@ export class AppComponent{
 ```html
 
 <log-monitor
-    [msgStream]="logStream$ | async"
+    [logStream]="logStream$ | async"
     theme="dark"
     title="NGRX action dispatch logs"
     [animated]="true"
