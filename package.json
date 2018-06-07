@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "deploy-lib": "ng build --prod log-monitor &&  cd dist/log-monitor && npm publish",
+    "deploy-lib": "ng build --prod log-monitor && cp README.md dist/log-monitor &&  cd dist/log-monitor && npm publish",
     "deploy-demo": "ng build --prod && cd dist/ngx-log-monitor && surge -p ./ -d ngx-log-monitor.surge.sh",
     "lint": "ng lint",
     "e2e": "ng e2e"
