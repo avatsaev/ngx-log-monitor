@@ -87,7 +87,7 @@ export class AppComponent{
     title="NGRX action dispatch logs"
     [animated]="true"
     [icons]="true"
-    [history]="restoredLogs" 
+    [history]="logs" 
 ></log-monitor>
 
 ```
