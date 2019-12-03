@@ -1,11 +1,11 @@
 {
-  "name": "ngx-log-monitor",
+  "name": "angular-log-monitor",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build ngx-log-monitor",
+    "test": "ng test ngx-log-monitor",
     "deploy-lib": "ng build --prod log-monitor && cp README.md dist/log-monitor &&  cd dist/log-monitor && npm publish",
     "deploy-demo": "ng build --prod && cd dist/ngx-log-monitor && surge -p ./ -d ngx-log-monitor.surge.sh",
     "lint": "ng lint",
@@ -13,10 +13,10 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/compiler": "^8.2.14",
     "@angular/animations": "^8.2.14",
+    "@angular/common": "^8.2.14",
+    "@angular/compiler": "^8.2.14",
+    "@angular/core": "^8.2.14",
     "@angular/forms": "^8.2.14",
     "@angular/http": "^7.2.15",
     "@angular/platform-browser": "^8.2.14",
