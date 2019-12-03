@@ -33,14 +33,14 @@ export class LogMonitorComponent implements OnChanges, AfterViewInit {
 
   ngOnChanges(changes: SimpleChanges) {
 
-    if (changes.history) {
-      this.history = changes.history.currentValue.map(normalizeLogMessage);
+    if (changes['history']) {
+      this.history = changes['history'].currentValue.map(normalizeLogMessage);
     }
 
-    if (changes.logStream && changes.logStream.currentValue) {
+    if (changes['logStream'] && changes['logStream'].currentValue) {
 
       this.zone.run(() => {
-        const normalizedMsg = normalizeLogMessage(changes.logStream.currentValue);
+        const normalizedMsg = normalizeLogMessage(changes['logStream'].currentValue);
         this.history.push(normalizedMsg);
         setTimeout(() => this.scrollToBottom());
       });
