@@ -27,7 +27,7 @@ export class LogMonitorComponent implements OnChanges, AfterViewInit {
   @Input() icons = true;
   @Input() customClass = 'log-container';
   @Input() animated = true;
-  @ViewChild('container') container: ElementRef;
+  @ViewChild('container', {static: false}) container: ElementRef;
 
   constructor(private zone: NgZone) { }
 
